@@ -1,4 +1,4 @@
-pragma solidity ^0.4.25; // 솔리디티 버전
+pragma solidity >=0.4.17; // 솔리디티 버전
 
 // Go, C++ 의 main 과 비슷한것...
 contract ZombieFactory {
