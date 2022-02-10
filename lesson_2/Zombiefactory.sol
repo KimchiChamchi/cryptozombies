@@ -1,5 +1,4 @@
-// SPDX-License-Identifier: MIT
-pragma solidity >=0.4.25;
+pragma solidity ^0.4.17;
 
 contract ZombieFactory {
     event NewZombie(uint256 zombieId, string name, uint256 dna);
@@ -29,13 +28,13 @@ contract ZombieFactory {
         zombieToOwner[id] = msg.sender;
         // ownerZombieCount매핑에 사용자주소를 키로 찾은 uint에 +1 해준다
         ownerZombieCount[msg.sender]++;
-        emit NewZombie(id, _name, _dna);
+        NewZombie(id, _name, _dna);
     }
 
     // 랜덤DNA 생성 함수
     function _generateRandomDna(string _str) private view returns (uint256) {
         // 랜덤값은 전달인자를 keccak256로 생성된 256비트 16진수 값
-        uint256 rand = uint256(keccak256(abi.encodePacked(_str)));
+        uint256 rand = uint256(keccak256((_str)));
         // 그 랜덤값을 10의 16승으로 나눈 나머지를 반환
         return rand % dnaModulus;
     }

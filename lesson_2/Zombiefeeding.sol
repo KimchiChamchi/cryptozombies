@@ -1,6 +1,4 @@
-// SPDX-License-Identifier: MIT
-
-pragma solidity >=0.4.25;
+pragma solidity ^0.4.25;
 // 다른파일을 불러오는 import
 import "./zombiefactory.sol";
 
